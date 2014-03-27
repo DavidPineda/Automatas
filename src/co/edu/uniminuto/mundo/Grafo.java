@@ -8,6 +8,7 @@ package co.edu.uniminuto.mundo;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Iterator;
 
 /**
  * clase contenedora de todos los nodos del sistema
@@ -63,5 +64,25 @@ public class Grafo {
         }catch(Exception ex){
             throw ex;
         }
+    }
+    
+    public boolean existNodo(Nodo nuevo){
+        Iterator<Nodo> it = nodos.iterator();
+        while(it.hasNext()){
+            Nodo guardado = it.next();
+            if(guardado.getNombre().equals(nuevo.getNombre()))
+                return true;
+        }
+        return false;
+    }
+    
+    public Nodo returnNodo(Nodo nuevo){
+        Iterator<Nodo> it = nodos.iterator();
+        while(it.hasNext()){
+            Nodo guardado = it.next();
+            if(guardado.getNombre().equals(nuevo.getNombre()))
+                return guardado;
+        }
+        return null;
     }
 }

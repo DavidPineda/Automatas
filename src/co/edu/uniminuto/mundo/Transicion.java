@@ -57,6 +57,7 @@ public class Transicion {
     public Transicion(Nodo nodo, String valor) {
         this.nodo = nodo;
         this.valor = valor;
+        
     }
 
     /**

@@ -6,6 +6,7 @@
 
 package co.edu.uniminuto.mundo;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 /**
@@ -82,6 +83,7 @@ public class Nodo {
     public Nodo(String nombre){
         this.nombre = nombre;
         estadoFin = false;
+        transiciones = new ArrayList<>();
     }
     
     /**
@@ -92,6 +94,7 @@ public class Nodo {
     public Nodo(String nombre, boolean estadoFIn){
         this.nombre = nombre;
         this.estadoFin = estadoFIn;
+        transiciones = new ArrayList<>();
     }
     
     /**
