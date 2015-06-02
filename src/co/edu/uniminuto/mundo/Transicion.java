@@ -5,7 +5,7 @@
  */
 package co.edu.uniminuto.mundo;
 
-import java.util.Collection;
+import co.edu.uniminuto.mundo.enums.Direccion;
 
 /**
  *
@@ -24,10 +24,41 @@ public class Transicion {
     private String valor;
 
     /**
-     * todos los puntos con las coordenadas por donde se pintara la transicion
+     * Punto Inicial de la transicion
      */
-    private Collection<Punto> puntos;
+    private Punto inicioTransicion;
+    
+    /**
+     * Punto Final de la transicion
+     */
+    private Punto FinTransicion;
 
+    /**
+     * Direccion hacia donde apunta la transicion
+     */
+    private Direccion direccion;
+    
+    /**
+     * Punto de la curva 
+     */
+    private Punto curva;
+    
+    public Punto getInicioTransicion() {
+        return inicioTransicion;
+    }
+
+    public void setInicioTransicion(Punto inicioTransicion) {
+        this.inicioTransicion = inicioTransicion;
+    }
+
+    public Punto getFinTransicion() {
+        return FinTransicion;
+    }
+
+    public void setFinTransicion(Punto FinTransicion) {
+        this.FinTransicion = FinTransicion;
+    }
+      
     public Nodo getNodo() {
         return nodo;
     }
@@ -44,10 +75,22 @@ public class Transicion {
         this.valor = valor;
     }
 
-    public Collection<Punto> getPuntos() {
-        return puntos;
+    public Direccion getDireccion() {
+        return direccion;
     }
 
+    public void setDireccion(Direccion direccion) {
+        this.direccion = direccion;
+    }
+
+    public Punto getCurva() {
+        return curva;
+    }
+
+    public void setCurva(Punto curva) {
+        this.curva = curva;
+    }
+    
     /**
      * Constructor de la clase Transicion
      *
@@ -57,19 +100,14 @@ public class Transicion {
     public Transicion(Nodo nodo, String valor) {
         this.nodo = nodo;
         this.valor = valor;
-        
-    }
 
-    /**
-     * Permite agregar un punto a la transicion
-     * @param punto El punto a agregar a la coleccion
-     */
-    public void addPunto(Punto punto) {
-        try {
-            puntos.add(punto);
-        } catch (Exception ex) {
-            throw ex;
-        }
     }
-
+    
+    public int distanciaX(){
+        return this.getFinTransicion().getX() - this.getInicioTransicion().getX();
+    }
+    
+    public int distanciaY(){
+        return this.getFinTransicion().getX() - this.getInicioTransicion().getX();
+    }
 }
